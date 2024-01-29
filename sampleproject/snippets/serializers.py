@@ -30,7 +30,7 @@ class SnippetSerializer(serializers.Serializer):
         a.save()
     """
     
-    def update(self, instance: Snippet, validated_data):
+    def update(self, instance: Snippet, validated_data: dict): # here instance should be of a result from """TableName.objects.get(pk = Value)"""
         """
         Update and return an existing `Snippet app` instance, given the validated data.
         it only update because instance.id is not included below
@@ -43,6 +43,12 @@ class SnippetSerializer(serializers.Serializer):
         instance.save()
 
         return instance
+    
+                    ################ OR ############
+    
+        # for key, value in validated_data.items():
+        #     setattr(instance, key, value)
+        # instance.save()
     """
     how to call this
 

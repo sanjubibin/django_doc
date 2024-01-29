@@ -9,7 +9,31 @@
 </head>
 <body>
     {% block content %}
-        <h1>About_page!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+        <h3>About_page!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h3>
+
+        <p>This is a paragraph with multiple lines.</p>
+        <p>This is a paragraph with multiple lines.</p>
+
+<pre style="color: blue">read_data_of_csv = pandas.read_csv("app1/csv_files/copy_exported.csv")
+print("state with max population",read_data_of_csv["population"].max())
+
+created_instance=[]
+with open("app1/csv_files/copy_exported.csv", "r") as csv_file:
+    # print("type11111111111:::::::", type(csv_file))
+    file = csv.DictReader(csv_file) #NOTE: 
+    for index, row in enumerate(file):
+        # print("index:::::::", index)
+        # print("row:::::::::", row)
+        save_to_db = LocationUSADataModelSerializer(data = row)
+        if save_to_db.is_valid():
+            # save_to_db.save()
+            <span style="color: green;">created_instance.append(dict(row))</span>
+            
+
+data = {
+    "dtt": created_instance
+}
+return Response(data)</pre>
     {% endblock content %}
 </body>
 </html>

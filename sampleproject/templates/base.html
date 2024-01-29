@@ -7,8 +7,8 @@
 </head>
 <body>
     <header>
-        <a href="{% url "home_page" %}">Home</a>
-        <a href="{% url "about_page" %}">About</a>
+        <a style="font-weight: bold; font-size: 30px; color: red" href="{% url "home_page" %}">Home | </a>
+        <a style="font-weight: bold; font-size: 30px; color: red" href="{% url "about_page" %}">About</a>
     </header>
 
     {% block content %}{% endblock content %}
